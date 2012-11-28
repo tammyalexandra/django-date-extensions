@@ -84,6 +84,18 @@ class ApproximateDate(object):
     
     def __len__(self):
         return len( self.__repr__() )
+        
+    def to_ceil_date(self):
+        """
+        TAH addition
+        """
+        return datetime.date(self.year, self.month or 12, self.day or 31)
+
+    def to_floor_date(self):
+        """
+        TAH addition
+        """
+        return datetime.date(self.year, self.month or 1, self.day or 1)
 
 ansi_date_re = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}$')
 
